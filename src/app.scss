@@ -1,0 +1,30 @@
+// GLOBAL RULES ;
+@import'break-points';
+@import'variables';
+@import'mixins';
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+ul{
+    list-style: none;
+}
+
+// END GLOBAL RULES
+
+
+/* START HEADER SECTION */
+
+/* END HEADER SECTION */
+

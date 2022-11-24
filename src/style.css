@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Fraunces", serif;
+}
+
+ul {
+  list-style: none;
+}
+
+li > a {
+  text-decoration: none;
+}
+
+/* START HEADER SECTION */
+.container {
+  background-image: url(../images/desktop/image-header.jpg);
+  background-size: cover;
+  height: 700px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  padding: 40px 80px;
+  font-family: "Barlow", sans-serif;
+}
+
+.navbar__links {
+  display: flex;
+}
+
+.navbar__link {
+  padding: 0 20px;
+}
+.navbar__link:last-child a {
+  background-color: hsl(0deg, 0%, 100%);
+  font-family: "Fraunces", serif;
+  color: hsl(212deg, 27%, 19%);
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-transform: uppercase;
+}
+.navbar__link:last-child a:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar__link > a {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.burger {
+  display: none;
+}
+
+/*  Small device */
+@media screen and (max-width: 767.98px) {
+  .navbar__links {
+    display: flex;
+    flex-direction: column;
+    width: 0;
+    position: absolute;
+    top: 100px;
+    right: 24px;
+    background-color: hsl(0deg, 0%, 100%);
+  }
+  .show-nav .navbar__links {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  .navbar__links a {
+    text-align: center;
+    width: 200px;
+    margin: 10px auto;
+  }
+  .navbar__link:last-child a {
+    background-color: hsl(51deg, 100%, 49%);
+    border-radius: 20px;
+    color: white;
+  }
+  .navbar__link {
+    visibility: 0;
+  }
+  .show-nav .navbar__link {
+    visibility: 1;
+  }
+  .navbar__link > a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: black;
+  }
+  /* Toggle menu */
+  .burger {
+    display: block;
+    position: relative;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+  }
+  .burger i {
+    font-size: 20px;
+    color: white;
+  }
+}
+main {
+  text-align: center;
+  padding-top: 40px;
+}
+main .title {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 48px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+/* END HEADER SECTION */
+.item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media only screen and (max-width: 768px) {
+  .item {
+    grid-template-columns: 1fr;
+  }
+}
+.item .describe {
+  padding: 120px 66px;
+}
+@media only screen and (max-width: 768px) {
+  .item .describe {
+    order: 1;
+  }
+}
+.item .describe h2 {
+  font-weight: 900;
+  font-size: 36px;
+  color: hsl(212deg, 27%, 19%);
+}
+.item .describe p {
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: hsl(213deg, 9%, 39%);
+  margin-block: 40px;
+}
+.item .describe .btn {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: hsl(212deg, 27%, 19%);
+  position: relative;
+  padding-inline: 10px;
+  cursor: pointer;
+}
+.item .describe .btn.yellow:hover::after {
+  background-color: hsl(51deg, 100%, 49%);
+}
+.item .describe .btn.yellow::after {
+  background-color: hsla(51deg, 100%, 49%, 0.25);
+}
+.item .describe .btn.red:hover::after {
+  background-color: hsl(7deg, 99%, 70%);
+}
+.item .describe .btn.red::after {
+  background-color: hsla(7deg, 99%, 70%, 0.6);
+}
+.item .describe .btn::after {
+  position: absolute;
+  content: "";
+  width: 120px;
+  height: 7px;
+  top: 12px;
+  left: 0px;
+  z-index: -1;
+  border-radius: 3px;
+}
+.item .image {
+  width: 100%;
+}
+.item .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr;
+  }
+}
+.skills .design, .skills .photography {
+  background-size: cover;
+  padding: 200px 100px 100px;
+}
+.skills .design h3, .skills .photography h3 {
+  margin-block: 100px 20px;
+  font-size: 24px;
+  color: hsl(167deg, 40%, 24%);
+  font-weight: 900;
+}
+.skills .design p, .skills .photography p {
+  font-size: 18px;
+  line-height: 30px;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Barlow", sans-serif;
+}
+.skills .design {
+  background-image: url(../images/desktop/image-graphic-design.jpg);
+  background-size: cover;
+}
+.skills .photography {
+  background-image: url(../images/desktop/image-photography.jpg);
+  background-size: cover;
+}
+
+.testimonials {
+  padding: 70px;
+  text-align: center;
+}
+.testimonials .title {
+  margin-block: 50px;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 5px;
+  color: hsl(210deg, 4%, 67%);
+}
+.testimonials .testimonal-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media only screen and (max-width: 768px) {
+  .testimonials .testimonal-items {
+    grid-template-columns: 1fr;
+  }
+}
+.testimonials .testimonal-items .col > img {
+  max-width: 74px;
+  margin-bottom: 50px;
+  height: 74px;
+  border-radius: 50%;
+}
+.testimonials .testimonal-items .col > p {
+  font-family: "Barlow", sans-serif;
+  line-height: 30px;
+  font-size: 16px;
+  height: 100px;
+  min-width: 255px;
+}
+.testimonials .testimonal-items .col .job {
+  font-size: 12px;
+  color: hsl(210deg, 4%, 67%);
+}
+
+.advertising {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+@media only screen and (max-width: 768px) {
+  .advertising .desktop-img {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .advertising .mobile-img {
+    display: none;
+  }
+}
+.advertising img {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  background-color: hsl(169deg, 44%, 74%);
+  padding: 50px 100px;
+  text-align: center;
+}
+footer .footer__logo {
+  font-size: 32px;
+  margin-bottom: 35px;
+  color: hsl(167deg, 40%, 24%);
+}
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 300px;
+  margin: auto;
+  margin-bottom: 90px;
+}
+footer ul > li a {
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+}
+footer ul > li a:hover {
+  color: hsl(0deg, 0%, 100%);
+}
+footer .icons-social-media {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  max-width: 120px;
+  margin: auto;
+  margin-bottom: 90px;
+}
+footer .icons-social-media i:hover {
+  color: hsl(0deg, 0%, 100%);
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
